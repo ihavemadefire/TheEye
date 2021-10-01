@@ -6,7 +6,7 @@ from .serializers import EventSerializer
 
 
 def create_view(request):
-
+    """View for handing event creation"""
     if request.method == 'POST':
         data = JSONParser().parse(request)
         serializer = EventSerializer(data=data)
