@@ -17,4 +17,9 @@ Once information has been gathered it is available to query through the PostgreS
 ## Future improvements
 * Native gui for querying data rather than working with Postgres Client
 * Futher destructuring data payload for more detailed queries.
+    * Restructure tables for more robust storage (add additional validations)
+    * Create separate payload table to 
 * Asynchronous Handling of POST requests to increase bandwidth of requests
+    * Build out celery worker functions to parce nested json objects with **kwargs attr
+* Unit testing
+* Integration Testing
