@@ -1,0 +1,21 @@
+   
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - DB_NAME=postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=notverysecretpassword
+      - DB_HOST=127.0.0.1
+      - DB_PORT=5432
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./TheEye:/TheEye
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
